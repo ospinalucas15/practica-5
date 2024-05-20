@@ -11,11 +11,10 @@
 class Rock : public QGraphicsItem {
     
 public:
-    Rock(float px, float py, float r);
+    Rock(float px, float py);
 
     float getPosY();
     float getVelY();
-    float getHeight();
 
     void setVelocity(float a);
 
@@ -30,11 +29,11 @@ private:
     float posX;
     float posY;
     float velY = 50;
-    float radio;
 
+    const float heightCollision = 5;
+    const float vertlim = 700;
     const float dt = 0.1;
-    const int vertlim = 800;
-
+    
     QPixmap* stripe = nullptr;
     qreal rowPixmap, colPixmap, width, height;
 

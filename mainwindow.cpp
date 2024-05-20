@@ -29,22 +29,59 @@ MainWindow::~MainWindow()
 
 }
 
+
+
 void MainWindow::on_pushButton_3_clicked()
 {
     timer->start(20);
 
-    rock1 = new Rock(20, 0, 50);
-    rock2 = new Rock(160, 0, 50);
-    rock3 = new Rock(300, 0, 50);
-    rock4 = new Rock(440, 0, 50);
-    rock5 = new Rock(580, 0, 50);
+    //countRocks += 1;
+
+
+    // if (countRocks == 1){
+
+    //     rock1 = new Rock(20, 10);
+    //     scene->addItem(rock1);
+    // }
+
+    // else if (countRocks == 2){
+
+
+    //     rock2 = new Rock(160, 10);
+    //     scene->addItem(rock2);
+    // }
+
+    // else if (countRocks == 3){
+        
+
+    //     rock3 = new Rock(300, 10);
+    //     scene->addItem(rock3);
+    // }
+
+    // else if (countRocks == 4){
+
+
+    //     rock4 = new Rock(440, 10);
+    //     scene->addItem(rock4);
+    // }
+
+    // else if (countRocks == 5){
+
+    //     rock5 = new Rock(580, 10);
+    //     scene->addItem(rock5);
+    // }
+
+    rock1 = new Rock(20, 10);
+    rock2 = new Rock(160, 10);
+    rock3 = new Rock(300, 10);
+    rock4 = new Rock(440, 10);
+    rock5 = new Rock(580, 10);
 
     scene->addItem(rock1);
     scene->addItem(rock2);
     scene->addItem(rock3);
     scene->addItem(rock4);
     scene->addItem(rock5);
-
 }
 
 void MainWindow::actualizarEscena(){
@@ -56,6 +93,12 @@ void MainWindow::actualizarEscena(){
     rock5->move();
 
     rock1->checkColisionBounds();
+    rock2->checkColisionBounds();
+    rock3->checkColisionBounds();
+    rock4->checkColisionBounds();
+    rock5->checkColisionBounds();
 }
+
+
 
 

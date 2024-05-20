@@ -22,6 +22,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    int countRocks = 2;
+
 public slots:
     void on_pushButton_3_clicked();
     void actualizarEscena();

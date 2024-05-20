@@ -1,6 +1,6 @@
 #include "rock.h"
 
-Rock::Rock(float px, float py, float r){
+Rock::Rock(float px, float py){
 
     rowPixmap = 0;
     colPixmap = 0;
@@ -9,7 +9,6 @@ Rock::Rock(float px, float py, float r){
     stripe = new QPixmap(":/img/rock.png");
     posX = px;
     posY = py;
-    radio = r;
 
 }
 
@@ -20,10 +19,6 @@ float Rock::getPosY(){
 
 float Rock::getVelY(){
     return velY;
-}
-
-float Rock::getHeight(){
-    return radio;
 }
 
 void Rock::setVelocity(float a){
@@ -37,7 +32,7 @@ void Rock::move(){
 }
 
 void Rock::checkColisionBounds(){
-    if (getPosY() > 50 || getPosY() < vertlim - 50){
+    if (getPosY() < heightCollision || getPosY() > (vertlim - heightCollision)){
         
         setVelocity(-1*getVelY());
     }
@@ -52,4 +47,5 @@ void Rock::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
     painter->drawPixmap(0, 0, scaled, colPixmap, rowPixmap, width, height);
     Q_UNUSED(option);
     Q_UNUSED(widget);
+
 }
