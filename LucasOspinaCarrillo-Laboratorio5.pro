@@ -11,11 +11,15 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    rock.cpp
+    papel.cpp \
+    rock.cpp \
+    tijera.cpp
 
 HEADERS += \
     mainwindow.h \
-    rock.h
+    papel.h \
+    rock.h \
+    tijera.h
 
 FORMS += \
     mainwindow.ui
